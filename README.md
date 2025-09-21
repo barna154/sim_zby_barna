@@ -35,8 +35,5 @@ ros2 launch sim_zby_barna launch_example1.launch.py
 # Kisbeadandó
 
 
-<p align="center"><img src="img/use_this_template01.png" width="60%" /></p>
-
-
-<p align="center"><img src="img/replace01.png" width="60%" /></p>
+<p align="center"><img src="img/alma.jpg" width="60%" /></p>
 
