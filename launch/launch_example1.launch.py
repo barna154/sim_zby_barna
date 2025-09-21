@@ -25,7 +25,7 @@ def generate_launch_description():
             ]
         ),
         # Node(
-        #     package='ros2_cpp_template',
+        #     package='sim_zby_barna',
         #     executable='simple_sub_node',
         #     output='screen',
         # ),
