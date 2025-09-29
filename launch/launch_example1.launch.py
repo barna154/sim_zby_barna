@@ -7,8 +7,4 @@ def generate_launch_description():
             package='sim_zby_barna',
             executable='jelgen_node',
         ),
-        Node(
-            package='sim_zby_barna',
-            executable='osszeg_node',
-        ),
     ])
