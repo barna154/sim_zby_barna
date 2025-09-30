@@ -27,7 +27,7 @@ private:
         auto msg1 = std_msgs::msg::Float32();
         auto msg2 = std_msgs::msg::Float32();
 
-        auto t = count_ * 0.05;
+        auto t = count_ * 0.02;
         msg1.data = sin(t * 2*M_PI*1) * 2;
         msg2.data = sin(t * 2*M_PI*2) * 0.5;
 
