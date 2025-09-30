@@ -25,8 +25,12 @@ set(ament_dependencies
 add_executable(jelgen src/jelgen.cpp)
 ament_target_dependencies(jelgen rclcpp std_msgs)
 
+add_executable(osszeg src/osszeg.cpp)
+ament_target_dependencies(osszeg rclcpp std_msgs)
+
 install(TARGETS
   jelgen
+  osszeg
   DESTINATION src/${PROJECT_NAME})
 
 ament_package()
