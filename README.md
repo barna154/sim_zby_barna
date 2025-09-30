@@ -35,9 +35,10 @@ ros2 launch sim_zby_barna launch_example1.launch.py
 # Szinusz jel generátor és összegző
 
 
-###jelek megjelenítése:
+### jelek megjelenítése:
 ``` r
 ros2 run rqt_plot rqt_plot /sine1/data /sine2/data
 ```
+<img src="img/sinus.png" alt="Szinusz jel" width="500">
 
 
