@@ -2,28 +2,28 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float32.hpp"
 
-class SumTwoSines : public rclcpp::Node
+class osszeg : public rclcpp::Node
 {
 public:
-    SumTwoSines() : Node("osszeg"), val1_received_(false), val2_received_(false)
+    osszeg() : Node("osszeg"), val1_received_(false), val2_received_(false)
     {
         RCLCPP_INFO(this->get_logger(), "Szinusz jelek összeadása");
         pub_ = this->create_publisher<std_msgs::msg::Float32>("osszeg", 10);
-        sub1_ = this->create_subscription<std_msgs::msg::Float32>( "sine1", 10,std::bind(&SumTwoSines::callback1, this, std::placeholders::_1));
-        sub2_ = this->create_subscription<std_msgs::msg::Float32>("sine2", 10,std::bind(&SumTwoSines::callback2, this, std::placeholders::_1));
+        sub1_ = this->create_subscription<std_msgs::msg::Float32>( "sine1", 10,std::bind(&osszeg::callback1, this, std::placeholders::_1));
+        sub2_ = this->create_subscription<std_msgs::msg::Float32>("sine2", 10,std::bind(&osszeg::callback2, this, std::placeholders::_1));
     }
 
 private:
-    void callback1(const std_msgs::msg::Float32::SharedPtr msg)
+    void callback1(const std_msgs::msg::Float32::SharedPtr msg3)
         {
-            val1_ = msg->data;
+            val1_ = msg3->data;
             val1_received_ = true;
             publish_sum();
         }
 
-    void callback2(const std_msgs::msg::Float32::SharedPtr msg)
+    void callback2(const std_msgs::msg::Float32::SharedPtr msg3)
         {
-            val2_ = msg->data;
+            val2_ = msg3->data;
             val2_received_ = true;
             publish_sum();
         }
@@ -47,7 +47,7 @@ private:
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc, argv);
-    rclcpp::spin(std::make_shared<SumTwoSines>());
+    rclcpp::spin(std::make_shared<osszeg>());
     rclcpp::shutdown();
     return 0;
 }
