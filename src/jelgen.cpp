@@ -27,8 +27,8 @@ private:
         auto msg1 = std_msgs::msg::Float32();
         auto msg2 = std_msgs::msg::Float32();
 
-        auto t = count_ * 0.05; // minden tick 50 ms → 0.05 s
-        msg1.data = sin(t * 2*M_PI*1) * 1.0;
+        auto t = count_ * 0.05;
+        msg1.data = sin(t * 2*M_PI*1) * 2;
         msg2.data = sin(t * 2*M_PI*2) * 0.5;
 
         pub1_->publish(msg1);
