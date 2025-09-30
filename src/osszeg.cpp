@@ -8,7 +8,7 @@ public:
     SumTwoSines() : Node("osszeg")
     {
         // Publikáló a szummához
-        pub_ = this->create_publisher<std_msgs::msg::Float32>("sine_sum", 10);
+        pub_ = this->create_publisher<std_msgs::msg::Float32>("osszeg", 10);
 
         // Feliratkozás a két szinuszra
         sub1_ = this->create_subscription<std_msgs::msg::Float32>(
