@@ -27,6 +27,6 @@ ament_target_dependencies(jelgen rclcpp std_msgs)
 
 install(TARGETS
   jelgen
-  DESTINATION lib/${PROJECT_NAME})
+  DESTINATION src/${PROJECT_NAME})
 
 ament_package()
