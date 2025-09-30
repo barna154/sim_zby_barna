@@ -32,7 +32,7 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch sim_zby_barna launch_example1.launch.py
 ```
 
-# Szinusz jel generátor és összegző
+# Szinusz jelgenerátor és összegző
 
 
 ### jelek megjelenítése:
