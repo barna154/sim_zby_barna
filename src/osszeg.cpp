@@ -7,18 +7,10 @@ class SumTwoSines : public rclcpp::Node
 public:
     SumTwoSines() : Node("osszeg")
     {
-        // Publikáló a szummához
+        RCLCPP_INFO(this->get_logger(), "Szinusz jelek összeadása");
         pub_ = this->create_publisher<std_msgs::msg::Float32>("osszeg", 10);
-
-        // Feliratkozás a két szinuszra
-        sub1_ = this->create_subscription<std_msgs::msg::Float32>(
-            "sine1", 10,
-            std::bind(&SumTwoSines::callback1, this, std::placeholders::_1));
-
-        sub2_ = this->create_subscription<std_msgs::msg::Float32>(
-            "sine2", 10,
-            std::bind(&SumTwoSines::callback2, this, std::placeholders::_1));
-
+        sub1_ = this->create_subscription<std_msgs::msg::Float32>( "sine1", 10,std::bind(&SumTwoSines::callback1, this, std::placeholders::_1));
+        sub2_ = this->create_subscription<std_msgs::msg::Float32>("sine2", 10,std::bind(&SumTwoSines::callback2, this, std::placeholders::_1));
         sum_ready_ = false;
     }
 
