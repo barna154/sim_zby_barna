@@ -31,6 +31,6 @@ ament_target_dependencies(osszeg rclcpp std_msgs)
 install(TARGETS
   jelgen
   osszeg
-  DESTINATION src/${PROJECT_NAME})
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
