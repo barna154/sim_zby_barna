@@ -5,7 +5,7 @@
 class SumTwoSines : public rclcpp::Node
 {
 public:
-    SumTwoSines() : Node("osszeg")
+    SumTwoSines() : Node("osszeg"), val1_received_(false), val2_received_(false)
     {
         RCLCPP_INFO(this->get_logger(), "Szinusz jelek összeadása");
         pub_ = this->create_publisher<std_msgs::msg::Float32>("osszeg", 10);
