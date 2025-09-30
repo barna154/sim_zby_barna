@@ -16,27 +16,27 @@ public:
 
 private:
     void callback1(const std_msgs::msg::Float32::SharedPtr msg)
-    {
-        val1_ = msg->data;
-        sum_ready_ = true;
-        publish_sum();
-    }
+        {
+            val1_ = msg->data;
+            val1_received_ = true;
+            publish_sum();
+        }
 
     void callback2(const std_msgs::msg::Float32::SharedPtr msg)
-    {
-        val2_ = msg->data;
-        sum_ready_ = true;
-        publish_sum();
-    }
+        {
+            val2_ = msg->data;
+            val2_received_ = true;
+            publish_sum();
+        }
 
     void publish_sum()
-    {
-        if (!sum_ready_) return;
+        {
+        if (!val1_received_ || !val2_received_) return; 
 
-        auto sum_msg = std_msgs::msg::Float32();
-        sum_msg.data = val1_ + val2_;
-        pub_->publish(sum_msg);
-    }
+            auto sum_msg = std_msgs::msg::Float32();
+            sum_msg.data = val1_ + val2_;
+            pub_->publish(sum_msg);
+        }
 
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr pub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr sub1_, sub2_;
