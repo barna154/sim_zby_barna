@@ -28,8 +28,8 @@ private:
         auto msg2 = std_msgs::msg::Float32();
 
         auto t = count_ * 0.05; // minden tick 50 ms → 0.05 s
-        msg1.data = sin(t * 2*M_PI*1) * 100; // 1 Hz szinusz
-        msg2.data = sin(t * 2*M_PI*2) * 50;  // 2 Hz szinusz
+        msg1.data = sin(t * 2*M_PI*1) * 1.0;
+        msg2.data = sin(t * 2*M_PI*2) * 0.5;
 
         pub1_->publish(msg1);
         pub2_->publish(msg2);
