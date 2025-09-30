@@ -27,11 +27,9 @@ private:
         auto msg1 = std_msgs::msg::Float32();
         auto msg2 = std_msgs::msg::Float32();
 
-        // első szinusz (100-as amplitúdó, lassabb frekvencia)
-        msg1.data = sin(count_ / 50.0) * 100;
-
-        // második szinusz (50-es amplitúdó, gyorsabb frekvencia)
-        msg2.data = sin(count_ / 20.0) * 50;
+        auto t = count_ * 0.05; // minden tick 50 ms → 0.05 s
+        msg1.data = sin(t * 2*M_PI*1) * 100; // 1 Hz szinusz
+        msg2.data = sin(t * 2*M_PI*2) * 50;  // 2 Hz szinusz
 
         pub1_->publish(msg1);
         pub2_->publish(msg2);
