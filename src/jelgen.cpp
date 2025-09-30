@@ -12,12 +12,14 @@ using namespace std::chrono_literals;
 class GenTwoSines : public rclcpp::Node
 {
 public:
-    GenTwoSines(): Node("jelgen"), count_(0)
-    {
-        RCLCPP_INFO(this->get_logger(), "Generating two sine waves");
-        pub2_ = this->create_publisher<std_msgs::msg::Float32>("sine2", 10);
-        timer_ = this->create_wall_timer(50ms, std::bind(&GenTwoSines::timer_callback, this));
-    }
+    GenTwoSines() : Node("jelgen"), count_(0)
+        {
+            RCLCPP_INFO(this->get_logger(), "Generating two sine waves");
+            pub1_ = this->create_publisher<std_msgs::msg::Float32>("sine1", 10);
+            pub2_ = this->create_publisher<std_msgs::msg::Float32>("sine2", 10);
+            timer_ = this->create_wall_timer(50ms, std::bind(&GenTwoSines::timer_callback, this));
+        }
+    
 
 private:
     void timer_callback()
