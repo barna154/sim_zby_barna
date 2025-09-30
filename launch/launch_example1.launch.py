@@ -5,6 +5,6 @@ def generate_launch_description():
     return LaunchDescription([
         Node(
             package='sim_zby_barna',
-            executable='jelgen_node',
+            executable='jelgen',
         ),
     ])
