@@ -11,7 +11,6 @@ public:
         pub_ = this->create_publisher<std_msgs::msg::Float32>("osszeg", 10);
         sub1_ = this->create_subscription<std_msgs::msg::Float32>( "sine1", 10,std::bind(&SumTwoSines::callback1, this, std::placeholders::_1));
         sub2_ = this->create_subscription<std_msgs::msg::Float32>("sine2", 10,std::bind(&SumTwoSines::callback2, this, std::placeholders::_1));
-        sum_ready_ = false;
     }
 
 private:
@@ -40,8 +39,9 @@ private:
 
     rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr pub_;
     rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr sub1_, sub2_;
-    float val1_, val2_;
-    bool sum_ready_;
+    float val1_ = 0.0, val2_ = 0.0;
+    bool val1_received_ = false, val2_received_ = false;
+
 };
 
 int main(int argc, char *argv[])
