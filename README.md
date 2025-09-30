@@ -42,3 +42,10 @@ ros2 run rqt_plot rqt_plot /sine1/data /sine2/data
 <img src="img/sinus.png" alt="Szinusz jel" width="800">
 
 
+### jelek megjelenítése:
+``` r
+ros2 run rqt_plot rqt_plot /osszeg/data
+```
+<img src="img/osszeg.png" alt="Szinusz jel" width="800">
+
+
