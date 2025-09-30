@@ -32,8 +32,12 @@ source ~/ros2_ws/install/setup.bash
 ros2 launch sim_zby_barna launch_example1.launch.py
 ```
 
-# Kisbeadandó
+# Szinusz jel generátor és összegző
 
 
-<p align="center"><img src="img/alma.jpg" width="60%" /></p>
+###jelek megjelenítése:
+``` r
+ros2 run rqt_plot rqt_plot /sine1/data /sine2/data
+```
+
 
