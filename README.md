@@ -47,5 +47,3 @@ ros2 run rqt_plot rqt_plot /sine1/data /sine2/data
 ros2 run rqt_plot rqt_plot /sine1/data /sine2/data /osszeg/data
 ```
 <img src="img/osszeg.png" alt="Szinusz jel" width="800">
-
-
