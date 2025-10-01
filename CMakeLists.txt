@@ -27,6 +27,9 @@ ament_target_dependencies(jelgen rclcpp std_msgs)
 add_executable(osszeg src/osszeg.cpp)
 ament_target_dependencies(osszeg rclcpp std_msgs)
 
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME})
+
 install(TARGETS
   jelgen
   osszeg
