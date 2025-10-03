@@ -28,8 +28,8 @@ private:
         auto msg2 = std_msgs::msg::Float32();
 
         auto t = count_ * 0.01;
-        msg1.data = sin(t * 0.5*M_PI) * 10;
-        msg2.data = sin(t * 1*M_PI) * 30;
+        msg1.data = sin(t * 5*M_PI) * 20;
+        msg2.data = sin(t * 10*M_PI) * 100;
 
         pub1_->publish(msg1);
         pub2_->publish(msg2);
