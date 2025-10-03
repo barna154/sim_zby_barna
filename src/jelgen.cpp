@@ -1,5 +1,4 @@
-#include <chrono>cd ~/ros2_ws
-
+#include <chrono>
 #include <functional>
 #include <memory>
 #include <string>
@@ -28,7 +27,7 @@ private:
         auto msg1 = std_msgs::msg::Float32();
         auto msg2 = std_msgs::msg::Float32();
 
-        auto t = count_ * 0.01;
+        auto t = count_ * 0.01;cd ~/ros2_ws
         msg1.data = sin(t * 5*M_PI*1) * 2;
         msg2.data = sin(t * 2*M_PI*2) * 0.5;
 
